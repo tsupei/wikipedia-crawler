@@ -114,6 +114,7 @@ def main(initial_url, articles_limit, interval, output_file):
 
             time.sleep(interval)
             article_format = next_url.replace('/wiki/', '')[:35]
+            next_url = next_url.replace('/wiki/', '/zh-tw/')
             print("{:<7} {}".format(counter, article_format))
             scrap(base_url, next_url, output_file, session_file)
         except KeyboardInterrupt:
